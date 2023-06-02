@@ -1,0 +1,29 @@
+.sport-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 288px);
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    height: -webkit-fill-available;
+
+    &__countries {
+      width: 180px;
+      background: #151515;
+      color: white;
+    }
+
+    &__tns {
+      flex: 1;
+      padding: 0 2px;
+      background: #0c0b0b;
+      overflow-y: auto;
+    }
+  }
+
+  &__footer {
+    background: #151515;
+    padding: 4px 6px;
+  }
+}

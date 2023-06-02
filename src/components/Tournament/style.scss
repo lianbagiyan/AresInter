@@ -1,0 +1,75 @@
+.tournament-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: linear-gradient(180deg, #f1f1f1 0%, #9e9e9e 100%);
+
+    &__left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 35%;
+
+      &__game {
+        padding: 14px 32px;
+        border-right: 1px solid rgba(255, 255, 255, 0.21);
+      }
+
+      &__league {
+        padding: 14px 39px;
+        border-right: 1px solid rgba(255, 255, 255, 0.21);
+      }
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+      width: 60%;
+
+      &__text {
+        padding: 14px 32px;
+        border-right: 1px solid rgba(255, 255, 255, 0.21);
+        border-left: 1px solid rgba(255, 255, 255, 0.21);
+        margin-right: 50px;
+      }
+    }
+  }
+
+  &__odds {
+    display: flex;
+    justify-content: end;
+    padding: 10px 0;
+
+    &__block {
+      width: 60%;
+
+      &__item {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: rgba(255, 255, 255, 0.6);
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    align-items: center;
+    color: #0e0e0e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .loading {
+    color: white;
+  }
+}

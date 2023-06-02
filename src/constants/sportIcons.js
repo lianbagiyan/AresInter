@@ -1,0 +1,15 @@
+export const sportIcons = {
+  'american-football': 'american-football.svg',
+  baseball: 'baseball.svg',
+  basketball: 'basketball.svg',
+  cricket: 'cricket.svg',
+  'field-hockey': 'field-hockey.svg',
+  football: 'football.svg',
+  'ice-hockey': 'ice-hockey.svg',
+  lacrosse: 'lacrosse.svg',
+  mma: 'mma.svg',
+  snooker: 'snooker.svg',
+  tennis: 'tennis.svg',
+  wrestling: 'wrestling.svg',
+  darts: 'darts.svg',
+}

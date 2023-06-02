@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+  flex-direction: column;
+
+  &__rows {
+    height: calc(100vh - 72px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

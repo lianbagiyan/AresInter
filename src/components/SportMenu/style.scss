@@ -1,0 +1,41 @@
+.sport-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 0 9px;
+  overflow-x: auto;
+
+  &__item {
+    background: linear-gradient(180deg, #232323 0%, #151515 100%);
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 30px 6px;
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    color: white;
+    cursor: pointer;
+
+    &--active {
+      background: linear-gradient(180deg, #54b052 0%, #287226 100%);
+      border: 1px solid #54b052;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.45);
+      margin-top: 0;
+    }
+
+    &__img {
+      width: 42px;
+      height: 42px;
+    }
+
+    &__count {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 0 8px;
+      margin-top: 7px;
+    }
+  }
+}

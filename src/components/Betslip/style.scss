@@ -1,0 +1,127 @@
+.betslip {
+  width: 288px;
+  background: #151515;
+
+  &__header {
+    background: linear-gradient(180deg, #54b052 0%, #287226 100%);
+    border: 1px solid #22b14c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+      padding: 10px 14px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      color: white;
+    }
+
+    &__img {
+      border-left: 1px solid #22b14c;
+      padding: 10px;
+
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-event {
+    background: #151515;
+    border-radius: 2px;
+    padding: 12px 10px;
+    margin-bottom: 5px;
+
+    &:hover {
+      background: #1b1b1b;
+    }
+
+    &__teams {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.24px;
+        color: #f9fafa;
+      }
+
+      & img {
+        cursor: pointer;
+      }
+    }
+
+    &__goals {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__info {
+        &__text {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.24px;
+          color: #cfd4d8;
+        }
+
+        &__coef {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.24px;
+          color: #22b14c;
+          margin-left: 6px;
+        }
+      }
+
+      &__win-coef {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background: #22b14c;
+        border-radius: 2px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: right;
+        letter-spacing: 0.24px;
+        color: white;
+        padding: 1px 4px;
+
+        & img {
+          padding-right: 2px;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    background: #1b1b1b;
+    border-radius: 4px 4px 0 0;
+    padding: 22px 14px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+
+    &__btn {
+      background: linear-gradient(180deg, #54b052 0%, #287226 100%);
+      border-radius: 2.8px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 13px;
+      letter-spacing: 0.22px;
+      color: white;
+      border: none;
+      padding: 13px 72px;
+    }
+  }
+}
