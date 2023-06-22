@@ -1,6 +1,6 @@
-import './style.scss'
-import closeIcon from '../../images/close-icon.svg'
-import coefArrow from '../../images/coef-arrow.svg'
+import "./style.scss";
+import closeIcon from "../../images/close-icon.svg";
+import coefArrow from "../../images/coef-arrow.svg";
 
 const BetslipEvent = ({ elem, handleCloseEvent }) => (
   <>
@@ -29,6 +29,6 @@ const BetslipEvent = ({ elem, handleCloseEvent }) => (
       </div>
     </div>
   </>
-)
+);
 
-export default BetslipEvent
+export default BetslipEvent;

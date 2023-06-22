@@ -1,15 +1,15 @@
-import './style.scss'
-import trashIcon from '../../images/trash.svg'
-import { removeAllBetslip } from '../../redux/actions/betslip-tickets'
-import { useDispatch } from 'react-redux'
-import { useCallback } from 'react'
+import "./style.scss";
+import trashIcon from "../../images/trash.svg";
+import { removeAllBetslip } from "../../redux/actions/betslip-tickets";
+import { useDispatch } from "react-redux";
+import { useCallback } from "react";
 
 const BetslipHeader = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleRemoveAll = useCallback(() => {
-    dispatch(removeAllBetslip())
-  }, [dispatch])
+    dispatch(removeAllBetslip());
+  }, [dispatch]);
 
   return (
     <div className="betslip__header">
@@ -18,7 +18,7 @@ const BetslipHeader = () => {
         <img src={trashIcon} alt="trash-icon" onClick={handleRemoveAll} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BetslipHeader
+export default BetslipHeader;

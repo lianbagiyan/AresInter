@@ -1,9 +1,9 @@
-import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
-import Header from './components/Header'
-import Sportsbook from './components/Sportsbook'
-import Betslip from './components/Betslip'
-import './App.scss'
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "./components/Header";
+import Sportsbook from "./components/Sportsbook";
+import Betslip from "./components/Betslip";
+import "./App.scss";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Betslip />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

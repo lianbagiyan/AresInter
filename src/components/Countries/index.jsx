@@ -1,61 +1,61 @@
-import './style.scss'
-import { useQuery } from 'react-query'
-import { Link, useNavigate } from 'react-router-dom'
-import { getSportData } from '../../rest-api/index'
-import { useDispatch, useSelector } from 'react-redux'
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import { setTournamentId } from '../../redux/actions/tournament-id'
-import { countriesInfo } from '../../constants/countries'
-import arrowClose from '../../images/arrow-close.svg'
-import countryIcon from '../../images/countries-logo.svg'
-import arrowOpen from '../../images/arrow-open.svg'
+import "./style.scss";
+import { useQuery } from "react-query";
+import { Link, useNavigate } from "react-router-dom";
+import { getSportData } from "../../rest-api/index";
+import { useDispatch, useSelector } from "react-redux";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { setTournamentId } from "../../redux/actions/tournament-id";
+import { countriesInfo } from "../../constants/countries";
+import arrowClose from "../../images/arrow-close.svg";
+import countryIcon from "../../images/countries-logo.svg";
+import arrowOpen from "../../images/arrow-open.svg";
 
 const Countries = () => {
-  const dispatch = useDispatch()
-  const sportData = getSportData()
-  const navigate = useNavigate()
-  const { data } = useQuery('sportData', sportData)
-  const sportId = useSelector((state) => state.sport.sportId)
-  const [openedCompetitions, setOpenedCompetitions] = useState([0])
+  const dispatch = useDispatch();
+  const sportData = getSportData();
+  const navigate = useNavigate();
+  const { data } = useQuery("sportData", sportData);
+  const sportId = useSelector((state) => state.sport.sportId);
+  const [openedCompetitions, setOpenedCompetitions] = useState([0]);
 
   const handleCountryClick = useCallback(
     (index) => {
       if (openedCompetitions.includes(index)) {
         setOpenedCompetitions(
           openedCompetitions.filter((itemIndex) => itemIndex !== index)
-        )
+        );
       } else {
-        setOpenedCompetitions([...openedCompetitions, index])
+        setOpenedCompetitions([...openedCompetitions, index]);
       }
     },
     [openedCompetitions]
-  )
+  );
   const handleCompetitionClick = useCallback(
     (id, i) => {
-      dispatch(setTournamentId(id))
+      dispatch(setTournamentId(id));
     },
     [dispatch]
-  )
+  );
 
   const countries = useMemo(() => {
-    if (!data?.['S']) {
-      return []
+    if (!data?.["S"]) {
+      return [];
     }
-    return data['S'].filter((item) => item.Id === sportId)[0]?.Ct || []
-  }, [data, sportId])
+    return data["S"].filter((item) => item.Id === sportId)[0]?.Ct || [];
+  }, [data, sportId]);
 
-  const countryFlags = {}
+  const countryFlags = {};
 
   countriesInfo.forEach((el) => {
-    countryFlags[el.slug] = el.alpha2.toLowerCase()
-  })
+    countryFlags[el.slug] = el.alpha2.toLowerCase();
+  });
 
   useEffect(() => {
     if (countries.length) {
-      dispatch(setTournamentId(countries[0].Trn[0].Id))
-      navigate(`/${sportId}/${countries[0].Id}/${countries[0].Trn[0].Id}`)
+      dispatch(setTournamentId(countries[0].Trn[0].Id));
+      navigate(`/${sportId}/${countries[0].Id}/${countries[0].Trn[0].Id}`);
     }
-  }, [countries, sportId])
+  }, [countries, sportId]);
 
   return (
     <div className="countries">
@@ -82,7 +82,7 @@ const Countries = () => {
                     <div className="countries__wrapper__list__header__item__info">
                       <img
                         src={`https://flagcdn.com/${
-                          countryFlags[elem.Slug] || 'pl'
+                          countryFlags[elem.Slug] || "pl"
                         }.svg`}
                         width="20"
                         alt="country flag"
@@ -124,7 +124,7 @@ const Countries = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Countries
+export default Countries;

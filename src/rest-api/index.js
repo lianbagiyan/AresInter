@@ -1,12 +1,12 @@
-import store from '../redux/store'
-const API_URL = 'https://sportsbook-api.lasworks.com/api'
+import store from "../redux/store";
+const API_URL = "https://sportsbook-api.lasworks.com/api";
 
 const fetchHeaders = {
   SiteId: 1,
-  Lang: 'en',
-  Accept: '*/*',
-  'Content-Type': 'application/json',
-}
+  Lang: "en",
+  Accept: "*/*",
+  "Content-Type": "application/json",
+};
 
 export const getSportData = () => {
   return async () => {
@@ -15,16 +15,16 @@ export const getSportData = () => {
       body: JSON.stringify({
         Interval: 5,
       }),
-      method: 'POST',
-    })
+      method: "POST",
+    });
 
     if (!response.ok) {
-      throw new Error('Failed to fetch data')
+      throw new Error("Failed to fetch data");
     }
 
-    return response.json()
-  }
-}
+    return response.json();
+  };
+};
 
 export const getTournamentData = (tournamentId) => {
   return async () => {
@@ -36,34 +36,34 @@ export const getTournamentData = (tournamentId) => {
         Mobile: true,
         TournamentId: tournamentId,
       }),
-      method: 'POST',
-    })
+      method: "POST",
+    });
 
     if (!response.ok) {
-      throw new Error('Failed to fetch data')
+      throw new Error("Failed to fetch data");
     }
 
-    return response.json()
-  }
-}
+    return response.json();
+  };
+};
 
 export const getBetslipData = (eventId) => {
   return async () => {
-    const tickets = store.getState().betslip.betslipTickets
+    const tickets = store.getState().betslip.betslipTickets;
     const response = await fetch(`${API_URL}/betslip`, {
       headers: fetchHeaders,
       body: JSON.stringify({
         Id: eventId,
         Ticket: tickets,
-        Type: 'O',
+        Type: "O",
       }),
-      method: 'POST',
-    })
+      method: "POST",
+    });
 
     if (!response.ok) {
-      throw new Error('Failed to fetch data')
+      throw new Error("Failed to fetch data");
     }
 
-    return response.json()
-  }
-}
+    return response.json();
+  };
+};

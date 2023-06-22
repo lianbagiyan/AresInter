@@ -1,17 +1,17 @@
-import { useQuery } from 'react-query'
-import { useSelector } from 'react-redux'
-import { getTournamentData } from '../../rest-api/index'
-import Market from '../Market'
-import { useMemo } from 'react'
-import './style.scss'
+import { useQuery } from "react-query";
+import { useSelector } from "react-redux";
+import { getTournamentData } from "../../rest-api/index";
+import Market from "../Market";
+import { useMemo } from "react";
+import "./style.scss";
 
 const Tournament = () => {
-  const tournamentId = useSelector((state) => state.tournament.tournamentId)
-  const tournamentData = getTournamentData(tournamentId)
-  const { data } = useQuery(['tournamentData', tournamentId], tournamentData)
+  const tournamentId = useSelector((state) => state.tournament.tournamentId);
+  const tournamentData = getTournamentData(tournamentId);
+  const { data } = useQuery(["tournamentData", tournamentId], tournamentData);
   const matches = useMemo(() => {
-    return data?.Matches || []
-  }, [data])
+    return data?.Matches || [];
+  }, [data]);
   return (
     <div className="tournament-wrapper">
       <div className="tournament-wrapper__header">
@@ -62,7 +62,7 @@ const Tournament = () => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Tournament
+export default Tournament;

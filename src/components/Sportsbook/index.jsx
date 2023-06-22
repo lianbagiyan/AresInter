@@ -1,7 +1,7 @@
-import './style.scss'
-import Countries from '../Countries/index'
-import Tournament from '../Tournament/index'
-import SportMenu from '../SportMenu/index'
+import "./style.scss";
+import Countries from "../Countries/index";
+import Tournament from "../Tournament/index";
+import SportMenu from "../SportMenu/index";
 
 const Sportsbook = () => (
   <div className="sport-wrapper">
@@ -17,6 +17,6 @@ const Sportsbook = () => (
       <SportMenu />
     </div>
   </div>
-)
+);
 
-export default Sportsbook
+export default Sportsbook;
