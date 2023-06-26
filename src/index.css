@@ -16,6 +16,10 @@ a {
   text-decoration: unset;
 }
 
+button {
+  border: none;
+}
+
 @font-face {
   font-family: "icomoon";
   src: url("fonts/icomoon.eot?j5o9bc");
