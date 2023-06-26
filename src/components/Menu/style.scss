@@ -1,0 +1,30 @@
+.menu {
+  flex: 1;
+  margin-left: 43px;
+  display: flex;
+
+  &__item {
+    font-weight: 400;
+    font-size: var(--font-size-lg);
+    line-height: 19px;
+    flex: 1;
+    color: var(--light-gray-rgb);
+    padding: 23px 2px;
+    width: 110px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &-active {
+      background: red;
+      color: var(--white);
+      background: var(--main-gradient);
+      box-shadow: inset 0 13px 33px var(--black-rgb);
+      border-top: 3px solid var(--green-base);
+    }
+  }
+}

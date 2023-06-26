@@ -1,0 +1,11 @@
+.btn {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 14px;
+  color: var(--white);
+}

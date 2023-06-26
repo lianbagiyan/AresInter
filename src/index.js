@@ -6,6 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { createRoot } from "react-dom/client";
+import "./variables.scss";
 
 const queryClient = new QueryClient();
 

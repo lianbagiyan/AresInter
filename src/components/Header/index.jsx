@@ -1,5 +1,6 @@
-import { useState } from "react";
 import HeaderLogo from "../../images/company-logo.png";
+import Menu from "../Menu";
+import Button from "../Button";
 import "./style.scss";
 import "../../index.css";
 
@@ -27,25 +28,11 @@ const menuItems = [
 ];
 
 const Header = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <header className="header">
       <img src={HeaderLogo} alt="header" className="header__logo" />
-      <div className="header__menu">
-        {menuItems.map((item, i) => (
-          <span
-            key={i}
-            className={`header__menu__item ${
-              activeIndex === i ? "header__menu__item-active" : ""
-            }`}
-            onClick={() => {
-              setActiveIndex(i);
-            }}
-          >
-            {item.name}
-          </span>
-        ))}
+      <div>
+        <Menu items={menuItems} />
       </div>
       <div className="header__controller">
         <div className="header__controller__btns">
@@ -59,25 +46,19 @@ const Header = () => {
               <span className="path3"></span>
             </i>
           </div>
-          {!!1 && (
-            <div className="header__controller__block">
-              <i className="icon-bet-history"></i>
-            </div>
-          )}
-          <div className="header__controller__block header__controller__acc">
-            {!!1 && (
-              <span className="header__controller__acc__elem">
-                800,000.00CFD
-              </span>
-            )}
-            <span className="header__controller__acc__elem">testuser12</span>
-            {!!1 && <i className="icon-home header__controller__acc__elem"></i>}
+          <div className="header__controller__block">
+            <i className="icon-bet-history"></i>
           </div>
-          {!!1 && (
-            <div className="header__controller__block header__controller__block__withdraw">
-              WITHDRAWAL
-            </div>
-          )}
+          <div className="header__controller__block header__controller__acc">
+            <span className="header__controller__acc__elem">800,000.00CFD</span>
+            <span className="header__controller__acc__elem">testuser12</span>
+            <i className="icon-home header__controller__acc__elem"></i>
+          </div>
+          <Button
+            text="WITHDRAWAL"
+            width={108}
+            background="var(--green-gradient)"
+          />
           <div className="header__controller__block">
             <i className="icon-flag">
               <span className="path1"></span>
@@ -91,20 +72,22 @@ const Header = () => {
           </div>
         </div>
         <div className="header__controller__login">
-          {!!1 && (
-            <div className="header__controller__block header__controller__block__card-login">
-              CARD LOGIN
-            </div>
-          )}
+          <Button
+            text="CARD LOGIN"
+            width={108}
+            background="var(--blue-gradient)"
+          />
           <div className="header__controller__block">
             <i className="icon-control-icon"></i>
           </div>
           <div className="header__controller__block">
             <i className="icon-terminal-checkout"></i>
           </div>
-          <div className="header__controller__block header__controller__block__login ">
-            <i className="icon-login-icon"></i>
-          </div>
+          <Button
+            icon="icon-login-icon"
+            width={44}
+            background="var(--red-gradient)"
+          />
         </div>
       </div>
     </header>

@@ -1,43 +1,12 @@
 .header {
-  background: linear-gradient(180deg, #232323 0%, #151515 100%);
-  box-shadow: 0 1px 0 #2d2d2d;
+  background: var(--main-gradient);
+  box-shadow: 0 1px 0 var(--gray-base);
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   &__logo {
     padding: 14px 10px;
-  }
-
-  &__menu {
-    flex: 1;
-    margin-left: 43px;
-
-    &__item {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      color: white;
-      flex: 1;
-      color: rgba(255, 255, 255, 0.57);
-      padding: 23px 2px;
-      width: 110px;
-      cursor: pointer;
-      display: inline-block;
-      text-align: center;
-
-      &:not(:last-child) {
-        margin-right: 10px;
-      }
-
-      &-active {
-        background: red;
-        color: white;
-        background: linear-gradient(180deg, #232323 0%, #151515 100%);
-        box-shadow: inset 0 13px 33px rgba(0, 0, 0, 0.3);
-        border-top: 3px solid #22b14c;
-      }
-    }
   }
 
   &__controller {
@@ -48,10 +17,6 @@
       display: flex;
       flex-direction: row;
       padding: 13px 9px;
-
-      .header__controller__block {
-        margin-right: 7px;
-      }
     }
 
     &__login {
@@ -67,11 +32,15 @@
         top: 8%;
         width: 1px;
         height: 84%;
-        background-color: #151515;
+        background-color: var(--black-base);
         box-shadow: -1px 0px 0px rgba(255, 255, 255, 0.05);
       }
 
       .header__controller__block {
+        margin-left: 7px;
+      }
+
+      & > div:last-child{
         margin-left: 7px;
       }
     }
@@ -79,37 +48,25 @@
     &__block {
       min-width: 44px;
       height: 44px;
-      background: #151515;
+      background: var(--black-base);
       border-radius: 3px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      color: #ffffff;
+      color: var(--white);
       font-weight: 500;
-      font-size: 12px;
+      font-size: var(--font-size-sm);
       line-height: 14px;
-
-      &__login {
-        background: linear-gradient(180deg, #c50f2d 0%, #571114 100%);
-      }
-
-      &__withdraw {
-        width: 108px;
-        background: linear-gradient(180deg, #54b052 0%, #287226 100%);
-      }
-
-      &__card-login {
-        width: 108px;
-        background: linear-gradient(180deg, #0082f0 0%, #0057a2 100%);
-      }
+      margin-left: 7px;
     }
 
     &__acc {
-      color: #ffffff;
+      color: var(--white);
       font-weight: 500;
-      font-size: 12px;
+      font-size: var(--font-size-sm);
       line-height: 14px;
+      margin-right: 7px;
 
       &__elem {
         padding: 0 10px;
@@ -124,7 +81,7 @@
             right: 0;
             width: 0;
             height: 176%;
-            border-right: 1px solid #292929;
+            border-right: 1px solid var(--light-gray);
             z-index: 1;
           }
         }
